@@ -1,0 +1,37 @@
+@Component
+public class Printer{
+    public void printMessage()
+    {
+        System.out.println("Hello from Print Message method");
+    }
+}
+
+-----
+@Service
+public class PrinterService{
+    @Autowired
+    private Printer p;
+    public String display()
+    {
+        p.printMessage();
+        return "Message printed successfully";
+    }
+}
+-----
+@RestController
+public class PrinterController{
+    @Autowired PrinterService ps;
+    @GetMapping("/print")
+    public String printMessage()
+    {
+        return ps.display();
+    }
+}
+-----
+@SpringBootApplication
+public class MyApp{
+    public static void main(String args[])
+    {
+    SpringApplication.run(MyApp.class,args);
+    }
+}
