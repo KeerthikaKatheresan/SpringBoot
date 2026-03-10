@@ -1,0 +1,26 @@
+Question 2️⃣ (Next Level)
+
+Create a REST API using Spring Boot that returns a student name using PathVariable.
+
+Requirement
+
+Endpoint:
+
+GET /student/{name}
+
+Example request:
+
+/student/Ravi
+
+Expected response:
+
+Hello Ravi
+-----
+@RestController
+public class StudentController{
+    @GetMapping("/student/{name}")
+    public String studentNameDisplay(@PathVariable String name)
+    {
+        return "Hello "+name;
+    }
+}
