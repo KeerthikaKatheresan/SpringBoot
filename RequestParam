@@ -1,0 +1,20 @@
+Question 3️⃣ (Still Simple)
+
+Create a REST API using Spring Boot that adds two numbers.
+
+Endpoint
+GET /add?a=5&b=3
+Expected Response
+8
+Requirement
+
+Use @RequestParam
+----
+@RestController
+public class NumberController{
+    @GetMapping("/add")
+    public int addnumber(@RequestParam int a,@RequestParam int b)
+    {
+        return a+b;
+    }
+}
