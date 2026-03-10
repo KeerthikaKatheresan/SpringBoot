@@ -1,0 +1,37 @@
+Question 11️⃣ – GET Student with ResponseEntity
+
+Create a GET API that returns a student by ID.
+
+Endpoint
+GET /student/{id}
+Requirements
+
+Use @PathVariable for ID
+
+Return ResponseEntity<Student>
+
+If the student exists, return 200 OK with the student
+
+If not, return 404 Not Found
+
+You can hardcode a few students in a List<Student>.
+
+@RestController
+public class StudentController{
+    
+    private List<Student> student=Arrays.asList(
+        {id:101,name:"Keerthika"},
+        {id:102,name:"Kavinthra"});
+    @GetMapping("/student/{id}")
+    public ResponseEntity<Student> display(@PathVariable int id)
+    {
+        for(Student s:student)
+        {
+            if(s.getId()==id)
+            {
+                return ResponseEntity.ok(s); //200 OK
+            }
+        }
+        return ResponseEntity.status(HTTP_NOT_FOUND).build();
+    }
+}
