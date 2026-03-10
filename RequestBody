@@ -1,0 +1,26 @@
+Question 5️⃣ (Very Common Interview Question)
+
+Create a POST API in Spring Boot to add a new student.
+
+Endpoint
+POST /student
+Request Body
+{
+  "id": 1,
+  "name": "Ravi",
+  "course": "Java"
+}
+Requirement
+
+Use @RequestBody
+-----
+@RestController
+public class StudentController{
+    @Autowired
+    private StudentService ss;
+    @PostMapping("/student")
+    public Student saveStudent(@RequestBody Student student)
+    {
+        return ss.save(student);
+    }
+}
