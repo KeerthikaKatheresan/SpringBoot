@@ -1,0 +1,39 @@
+Question 4️⃣ (Next Step – Object Response)
+
+Using Spring Boot create a Student API that returns a Student object.
+
+Endpoint
+GET /student
+Expected JSON Response
+{
+  "id": 1,
+  "name": "Ravi",
+  "course": "Java"
+}
+Requirements
+
+1️⃣ Create a Student class
+2️⃣ Return the object from the controller method.
+
+✍️ Write:
+
+Student class
+
+Controller method
+-------
+public class Student{
+    private int id;
+    private String name;
+    //getter and setter
+    //default constructor & parametrized constructor
+}
+
+@RestController
+public class StudentController{
+   
+    @GetMapping("/student")
+    public Student display(@RequestParam int id)
+    {
+       return new Student(1,"Ravi","Java");//returning fixed object
+    }
+}
