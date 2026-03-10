@@ -1,0 +1,31 @@
+Question 1️⃣ – Simple REST API
+
+Using Spring Boot, write a REST API that returns:
+
+Hello, Welcome to Spring Boot!
+
+Requirements:
+
+Create a controller
+
+Use @RestController
+
+Create a GET API endpoint /hello
+
+Example request:
+
+GET /hello
+
+Expected response:
+
+Hello, Welcome to Spring Boot!
+-----
+@RestController
+public class HelloController{
+    
+    @GetMapping("/hello")
+    public String sayHello()
+    {
+        return "Hello, Welcome to Spring Boot!";
+    }
+}
